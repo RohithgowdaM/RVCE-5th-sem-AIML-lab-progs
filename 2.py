@@ -9,8 +9,8 @@ def minmax(depth,nodeIndex,maximizing_player,values,alpha,beta):
             val=minmax(depth+1,nodeIndex*2+i,False,values,alpha,beta)
             best=max(best,val)
             alpha=max(alpha,best)
-            # if beta<=alpha:
-            #     break
+            if beta<=alpha:
+                break
         return best
     else:
         best=MAX
@@ -18,8 +18,8 @@ def minmax(depth,nodeIndex,maximizing_player,values,alpha,beta):
             val=minmax(depth+1,nodeIndex*2+i,True,values,alpha,beta)
             best=min(best,val)
             beta=min(beta,best)
-            # if beta<=alpha:
-            #     break
+            if beta<=alpha:
+                break
         return best
         
 
